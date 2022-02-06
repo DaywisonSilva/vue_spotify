@@ -14,6 +14,7 @@
   <input
     type="text"
     class="searchBar__input"
+    autocomplete="new-password"
     v-model="state.search"
     @focus="state.focus = true"
     @blur="state.focus = false"

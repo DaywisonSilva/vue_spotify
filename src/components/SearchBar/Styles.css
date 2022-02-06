@@ -13,7 +13,8 @@
 }
 
 .searchBar__input {
-  width: calc(100% - 60px);
+  width: calc(100% - 135px);
+  margin-top: 40px;
   height: 75px;
   border-radius: 50px 0 0 50px;
   padding: 20px 25px 10px 70px;
@@ -89,11 +90,13 @@
 
 .searchBar__label--focus {
   transform: translateY(-14px) translateX(3px) scale(0.8);
+  color: rgb(207, 207, 207);
   transition: all 0.3s linear;
 }
 
 .searchBar__label.hasValue {
   transform: translateY(-14px) translateX(3px) scale(0.8);
+  color: rgb(207, 207, 207);
   transition: all 0.3s linear;
 }
 
@@ -122,7 +125,7 @@
 
 @media screen and (min-width: 600px) {
   .searchBar__input {
-    width: calc(100% - 144px);
+    width: calc(100% - 253px);
   }
 
   .searchBar__filter {

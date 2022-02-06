@@ -13,11 +13,13 @@ ol {
   font-family: "DM Sans", sans-serif;
 }
 
-div,
-section,
-main,
-span {
-  transition: all 0.2s linear;
+*::selection {
+  background-color: #1ed760;
+  color: black;
+}
+
+h1 {
+  font-size: 24px;
 }
 
 input:-webkit-autofill,

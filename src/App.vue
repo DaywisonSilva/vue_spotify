@@ -1,5 +1,6 @@
 <template>
   <app-aside></app-aside>
+  <app-search-bar></app-search-bar>
   <app-page>
     <router-view v-slot="{ Component }">
       <transition enter-active-class="fadeInLeft" appear>
@@ -12,10 +13,12 @@
 <script lang="ts">
 import AppPage from "@/components/layout/AppPage.vue";
 import AppAside from "@/components/layout/Aside.vue";
+import AppSearchBar from "@/components/SearchBar/SearchBar.vue";
 export default {
   components: {
     AppPage,
     AppAside,
+    AppSearchBar,
   },
 };
 </script>

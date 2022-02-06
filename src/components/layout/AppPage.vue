@@ -6,9 +6,12 @@
 
 <style scoped>
 .main {
-  height: calc(100vh - 40px);
+  height: calc(100vh - 115px);
+  padding-top: 30px;
+  box-sizing: border-box;
   margin-left: 80px;
-  padding-top: 40px;
+  position: absolute;
+  bottom: 0;
   width: calc(100% - 80px);
 }
 
