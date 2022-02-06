@@ -6,8 +6,9 @@
 
 <style scoped>
 .main {
-  width: calc(100% - 133px);
-  height: 100vh;
+  height: calc(100vh - 40px);
   margin-left: 133px;
+  padding-top: 40px;
+  width: calc(100% - 133px);
 }
 </style>

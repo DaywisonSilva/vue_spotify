@@ -1,7 +1,8 @@
 <template>
+  <app-aside></app-aside>
   <app-page>
     <router-view v-slot="{ Component }">
-      <transition enter-active-class="fadeInLeft">
+      <transition enter-active-class="fadeInLeft" appear>
         <component :is="Component" />
       </transition>
     </router-view>
@@ -9,10 +10,12 @@
 </template>
 
 <script lang="ts">
-import AppPage from "@/components/AppPage.vue";
+import AppPage from "@/components/layout/AppPage.vue";
+import AppAside from "@/components/layout/Aside.vue";
 export default {
   components: {
     AppPage,
+    AppAside,
   },
 };
 </script>

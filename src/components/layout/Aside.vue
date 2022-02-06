@@ -1,0 +1,25 @@
+<template>
+  <aside class="aside">
+    <lottie-player
+      autoplay
+      mode="normal"
+      src="animations/spotify.json"
+      style="width: 87px; height: 87px; position: relative; bottom: 5px"
+    />
+  </aside>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style scoped>
+.aside {
+  float: left;
+  width: 133px;
+  display: flex;
+  justify-content: center;
+  height: calc(100vh - 162px);
+  padding-top: 40px;
+}
+</style>
