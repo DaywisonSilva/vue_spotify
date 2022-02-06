@@ -21,5 +21,8 @@ export default {};
   justify-content: center;
   height: calc(100vh - 162px);
   padding-top: 40px;
+  position: relative;
+  z-index: 2;
+  background-color: #000;
 }
 </style>
