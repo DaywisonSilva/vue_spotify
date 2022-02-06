@@ -12,3 +12,19 @@ ol {
   color: white;
   font-family: "DM Sans", sans-serif;
 }
+
+div,
+section,
+main,
+span {
+  transition: all 0.2s linear;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+input:-webkit-autofill::placeholder {
+  -webkit-box-shadow: 0 0 0 100px black inset !important;
+  -webkit-text-fill-color: white !important;
+}

@@ -1,0 +1,135 @@
+.searchBar {
+  position: relative;
+  color: white;
+}
+
+.searchBar__label {
+  position: absolute;
+  z-index: 1;
+  top: -6px;
+  left: 69px;
+  transition: all 0.3s linear;
+  transform-origin: left;
+}
+
+.searchBar__input {
+  width: calc(100% - 60px);
+  height: 75px;
+  border-radius: 50px 0 0 50px;
+  padding: 20px 25px 10px 70px;
+  box-sizing: border-box;
+  border-top: 2px solid #333333;
+  border-bottom: 2px solid #333333;
+  border-left: 2px solid #333333;
+  border-right: none;
+  background: #0d0d0d;
+  outline: none;
+  color: white;
+  transition: all 0.2s linear;
+  font-size: 1.2rem;
+}
+
+.searchBar__input:focus {
+  border-top: 2px solid #1ed660;
+  border-bottom: 2px solid #1ed660;
+  border-left: 2px solid #1ed660;
+}
+
+.searchBar__input:focus ~ .searchBar__filter {
+  border-top: 2px solid #1ed660;
+  border-bottom: 2px solid #1ed660;
+  border-right: 2px solid #1ed660;
+  transition: all 0.2s linear;
+}
+
+.searchBar__filter {
+  padding: 25px 25px 10px 0px;
+  position: absolute;
+  color: white;
+  top: 40px;
+  justify-content: space-between;
+  display: inline-flex;
+  box-sizing: border-box;
+  height: 75px;
+  border-radius: 0px 50px 50px 0px;
+  border-top: 2px solid #333333;
+  border-bottom: 2px solid #333333;
+  border-right: 2px solid #333333;
+  border-left: none;
+  background: #0d0d0d;
+  transition: all 0.2s linear;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.searchBar__filter span {
+  display: none;
+}
+
+.searchBar__filter:hover {
+  color: #1ed660;
+  transition: all 0.2s linear;
+}
+
+.searchBar__iconAdjustments {
+  width: 18px;
+  position: relative;
+  bottom: 6px;
+}
+
+.searchBar__input[value] ~ .searchBar__label {
+  display: none;
+}
+
+.searchBar__label--focus {
+  transform: translateY(-14px) translateX(3px) scale(0.8);
+  transition: all 0.3s linear;
+}
+
+.searchBar__label.hasValue {
+  transform: translateY(-14px) translateX(3px) scale(0.8);
+  transition: all 0.3s linear;
+}
+
+.searchBar__searchIcon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 3px solid white;
+  position: absolute;
+  top: -6px;
+  left: 25px;
+  z-index: 2;
+}
+
+.searchBar__input::placeholder {
+  color: white;
+  transition: all 0.2s linear;
+  display: block;
+}
+
+.searchBar__input:focus.searchBar__input::placeholder {
+  color: green;
+  transition: all 0.2s linear;
+  transform: translateY(-20px);
+}
+
+@media screen and (min-width: 600px) {
+  .searchBar__input {
+    width: calc(100% - 144px);
+  }
+
+  .searchBar__filter {
+    width: 90px;
+  }
+
+  .searchBar__filter span {
+    display: inline;
+  }
+}
