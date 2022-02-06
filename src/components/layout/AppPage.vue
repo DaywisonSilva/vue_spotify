@@ -10,8 +10,6 @@
   padding-top: 30px;
   box-sizing: border-box;
   margin-left: 80px;
-  position: absolute;
-  bottom: 0;
   width: calc(100% - 80px);
 }
 
