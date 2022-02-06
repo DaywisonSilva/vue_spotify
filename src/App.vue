@@ -1,30 +1,45 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view />
+  <app-page>
+    <router-view v-slot="{ Component }">
+      <transition enter-active-class="fadeInLeft">
+        <component :is="Component" />
+      </transition>
+    </router-view>
+  </app-page>
 </template>
+
+<script lang="ts">
+import AppPage from "@/components/AppPage.vue";
+export default {
+  components: {
+    AppPage,
+  },
+};
+</script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  min-height: 100vh;
+  background-color: #000;
 }
 
-#nav {
-  padding: 30px;
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.fadeInLeft {
+  animation-name: fadeInLeft;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-duration: 0.5s;
 }
 </style>

@@ -1,16 +1,168 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="pt-br">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="theme-color" content="#21c75c" />
+    <meta name="author" content="Daywison Silva" />
+    <meta name="description" content="a spotify redesign made with Vue.js ♥" />
+    <script
+      data-pace-options='{ "restartOnPushState": false, "restartOnRequestAfter": false }'
+      src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/pace-js@latest/pace-theme-default.min.css"
+    />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .pace {
+        -webkit-pointer-events: none;
+        pointer-events: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      .pace-inactive {
+        display: none;
+      }
+
+      .pace .pace-progress {
+        background: #1ed760;
+        position: fixed;
+        z-index: 2000;
+        top: 0;
+        right: 100%;
+        width: 100%;
+        height: 2px;
+      }
+
+      .pace-done .spotifyContainer {
+        display: none;
+      }
+
+      .pace-running .loading {
+        width: 60px;
+        height: 60px;
+        margin: 100px auto 0 auto;
+        border-radius: 50%;
+        background-image: linear-gradient(to right, #21c75c, #22292f 80%);
+        animation: rotate 0.8s linear infinite;
+      }
+
+      .pace-running .loading::before {
+        content: "";
+        display: block;
+        width: 52px;
+        height: 52px;
+        background-color: #22292f;
+        border-radius: 50%;
+        position: relative;
+        top: 4px;
+        left: 4px;
+      }
+
+      .pace-running .spotifyContainer {
+        height: 100vh;
+        background-color: #22292f;
+        display: grid;
+        place-content: center;
+      }
+
+      .pace-running #app {
+        display: none;
+      }
+
+      .pace-running #spotify {
+        transform: scale(0);
+        transform-origin: center;
+        animation: scale 0.5s ease-in-out forwards;
+      }
+
+      .pace-running #line1 {
+        transform-origin: center;
+        transform: scale(0);
+        animation: scale 0.5s 0s infinite ease-in-out alternate forwards;
+      }
+
+      .pace-running #line2 {
+        transform-origin: center;
+        transform: scale(0);
+        animation: scale 0.5s 0.1s infinite ease-in-out alternate forwards;
+      }
+
+      .pace-running #line3 {
+        transform-origin: center;
+        transform: scale(0);
+        animation: scale 0.5s 0.2s infinite ease-in-out alternate forwards;
+      }
+
+      @keyframes scale {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong
+        >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+        properly without JavaScript enabled. Please enable it to
+        continue.</strong
+      >
     </noscript>
+    <div class="spotifyContainer">
+      <svg
+        width="200"
+        height="200"
+        viewBox="0 0 200 200"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g id="spotify">
+          <rect id="elipse" width="200" height="200" rx="100" fill="black" />
+          <path
+            id="line3"
+            d="M49.8613 150.629C45.8613 150.129 44.5921 144.756 47.8613 138.129C49.5879 134.629 79.1139 129.774 102.861 133.129C123.743 136.079 140.724 145.024 142.361 147.129C143.861 148.629 147.861 158.129 139.861 159.129C131.861 160.129 123.861 148.129 95.3613 145.629C66.8613 143.129 53.8613 151.129 49.8613 150.629Z"
+            fill="#42FE84"
+          />
+          <path
+            id="line2"
+            d="M44.9577 114.596C38.4577 112.596 38.9578 105.096 42.9577 101.096C45.0735 98.9802 65.3814 94.2714 89.4577 95.0958C110.9 95.83 135.227 101.257 153.958 112.096C157.458 114.596 156.978 117.581 154.958 121.596C152.408 126.03 150.958 126.096 147.958 125.596C146.543 125.36 120.507 112.369 97.4577 110.096C71.6253 107.548 48.3928 115.653 44.9577 114.596Z"
+            fill="#42FE84"
+          />
+          <path
+            id="line1"
+            d="M43.1684 75.9881C34.3915 78.5542 32.1117 62.346 39.1684 60.9881C62.1067 53.7084 89.7244 53.7435 113.168 57.4879C141.402 61.9972 163.807 71.5 167.668 74.9881C174.736 81.3727 167.079 92.4929 161.168 88.9881C155.258 85.4833 124.849 73.7371 100.168 71.4881C77.9314 69.4619 51.9452 73.4221 43.1684 75.9881Z"
+            fill="#42FE84"
+          />
+        </g>
+      </svg>
+      <div class="loading"></div>
+    </div>
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
