@@ -11,6 +11,7 @@
   box-sizing: border-box;
   margin-left: 80px;
   width: calc(100% - 80px);
+  overflow: auto;
 }
 
 @media screen and (min-width: 600px) {

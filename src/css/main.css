@@ -30,3 +30,18 @@ input:-webkit-autofill::placeholder {
   -webkit-box-shadow: 0 0 0 100px black inset !important;
   -webkit-text-fill-color: white !important;
 }
+
+*::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+  height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: black; /* color of the tracking area */
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(black, #1ed760); /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid black; /* creates padding around scroll thumb */
+}

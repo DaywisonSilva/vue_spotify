@@ -7,29 +7,81 @@
         :spaceBetween="30"
         :freeMode="true"
         :modules="modules"
+        :autoplay="false"
         class="mySwiper"
       >
         <swiper-slide>
-          <app-card src="img/slider/chill-mix.jpg" />
-        </swiper-slide>
-        <swiper-slide><app-card src="img/slider/gamer-mix.jpg" /></swiper-slide>
-        <swiper-slide>
-          <app-card src="img/slider/future-mix.jpg" />
-        </swiper-slide>
-        <swiper-slide>
-          <app-card src="img/slider/classical-mix.jpg" />
-        </swiper-slide>
-        <swiper-slide>
-          <app-card src="img/slider/chill-mix.jpg" />
-        </swiper-slide>
-        <swiper-slide><app-card src="img/slider/gamer-mix.jpg" /></swiper-slide>
-        <swiper-slide>
-          <app-card src="img/slider/future-mix.jpg" />
+          <app-card
+            src="img/slider/chill-mix.jpg"
+            color="orange"
+            title="Chill Mix"
+            subtitle="Just relax and listen"
+            :tracks="39"
+          />
         </swiper-slide>
         <swiper-slide>
-          <app-card src="img/slider/classical-mix.jpg" />
+          <app-card
+            src="img/slider/gamer-mix.jpg"
+            color="red"
+            title="Gamer Mix"
+            subtitle="Listen while you play"
+            :tracks="47"
+          />
         </swiper-slide>
-
+        <swiper-slide>
+          <app-card
+            src="img/slider/future-mix.jpg"
+            color="blue"
+            title="Future Mix"
+            subtitle="Of your favorites"
+            :tracks="26"
+          />
+        </swiper-slide>
+        <swiper-slide>
+          <app-card
+            src="img/slider/classical-mix.jpg"
+            color="green"
+            title="Classical Mix"
+            subtitle="Just relax and listen"
+            :tracks="39"
+          />
+        </swiper-slide>
+        <swiper-slide>
+          <app-card
+            src="img/slider/chill-mix.jpg"
+            color="orange"
+            title="Chill Mix"
+            subtitle="Just relax and listen"
+            :tracks="39"
+          />
+        </swiper-slide>
+        <swiper-slide>
+          <app-card
+            src="img/slider/gamer-mix.jpg"
+            color="red"
+            title="Gamer Mix"
+            subtitle="Listen while you play"
+            :tracks="47"
+          />
+        </swiper-slide>
+        <swiper-slide>
+          <app-card
+            src="img/slider/future-mix.jpg"
+            color="blue"
+            title="Future Mix"
+            subtitle="Of your favorites"
+            :tracks="26"
+          />
+        </swiper-slide>
+        <swiper-slide>
+          <app-card
+            src="img/slider/classical-mix.jpg"
+            color="green"
+            title="Classical Mix"
+            subtitle="Just relax and listen"
+            :tracks="39"
+          />
+        </swiper-slide>
         <div class="overlay"></div>
       </swiper>
     </div>
@@ -38,7 +90,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { FreeMode, Pagination } from "swiper";
+import { FreeMode, Pagination, Autoplay } from "swiper";
 import AppCard from "@/components/Card/Card.vue";
 export default defineComponent({
   name: "Home",
@@ -47,7 +99,7 @@ export default defineComponent({
   },
   setup() {
     return {
-      modules: [FreeMode, Pagination],
+      modules: [FreeMode, Pagination, Autoplay],
     };
   },
 });
@@ -67,7 +119,7 @@ export default defineComponent({
   user-select: none;
 }
 .mySwiper {
-  height: 400px;
+  height: 320px;
   color: white;
 }
 

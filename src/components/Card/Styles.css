@@ -4,6 +4,22 @@
   border-radius: 50px;
   background-color: goldenrod;
   overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s linear;
+}
+
+.card:hover {
+  animation: form 0.3s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes form {
+  from {
+    border-radius: 60px;
+  }
+  to {
+    border-radius: 10px;
+  }
 }
 
 .card__img {
@@ -11,6 +27,91 @@
   height: 100%;
   object-fit: cover;
   object-position: 0 -30px;
+}
+
+.card__tracks {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.card__info {
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  bottom: 0;
+  padding: 0 18px;
+}
+
+.card__info--overlayOrange {
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 50.12%,
+    rgba(253, 156, 2, 0) 50.12%,
+    #fd9c02 100%
+  );
+}
+
+.card__info--overlayRed {
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 50.11%,
+    rgba(220, 34, 90, 0) 50.11%,
+    #dc225a 100%
+  );
+}
+
+.card__info--overlayBlue {
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 50.11%,
+    rgba(35, 78, 255, 0) 50.11%,
+    #234eff 100%
+  );
+}
+
+.card__info--overlayGreen {
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 50.12%,
+    rgba(43, 210, 104, 0) 50.12%,
+    #2bd268 100%
+  );
+}
+
+.card__btn {
+  width: 60px;
+  height: 60px;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s linear;
+}
+
+.card__btn:active {
+  transform: translateY(-5px);
+}
+
+.card__text {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+
+.card__title {
+  font-weight: 500;
 }
 
 @media screen and (min-width: 600px) {

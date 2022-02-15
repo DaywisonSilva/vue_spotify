@@ -1,31 +1,33 @@
 <template>
   <app-aside></app-aside>
-  <app-search-bar></app-search-bar>
-  <app-page>
+  <app-header></app-header>
+  <app-main>
     <router-view v-slot="{ Component }">
       <transition enter-active-class="fadeInLeft" appear>
         <component :is="Component" />
       </transition>
     </router-view>
-  </app-page>
+  </app-main>
 </template>
 
 <script lang="ts">
-import AppPage from "@/components/layout/AppPage.vue";
+import AppMain from "@/components/layout/Main.vue";
 import AppAside from "@/components/layout/Aside.vue";
-import AppSearchBar from "@/components/SearchBar/SearchBar.vue";
+import AppHeader from "@/components/layout/Header.vue";
+
 export default {
   components: {
-    AppPage,
+    AppMain,
     AppAside,
-    AppSearchBar,
+    AppHeader,
   },
 };
 </script>
 
 <style>
 #app {
-  min-height: 100vh;
+  height: 100vh;
+  overflow: auto;
   background-color: #000;
 }
 
